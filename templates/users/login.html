@@ -1,0 +1,20 @@
+{% extends "users/base.html" %}
+
+{% block head_content%}
+<title>Platzigram Login</title>
+{% endblock%}
+
+
+{% block container %}
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    {% if error %}
+    <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+    <input type="text" placeholder="Username" name="username" class="form-control input-sm">
+    <br>
+    <input type="password" placeholder="Password" name="password" class="form-control input-sm">
+    <br>
+    <button type="submit" class="btn btn-primary">Sing in</button>
+</form>
+{% endblock%}
