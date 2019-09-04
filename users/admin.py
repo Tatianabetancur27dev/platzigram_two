@@ -19,7 +19,7 @@ class ProfileAdmin(admin.ModelAdmin):
         'phone_number'
         )
     list_filter = (
-        'create',
+        'created',
         'modified',
         'user__is_active',
         'user__is_staff',
@@ -36,11 +36,11 @@ class ProfileAdmin(admin.ModelAdmin):
             )            
         }),
         ('Metadata', {
-            'fields': (('create', 'modified'))            
+            'fields': (('created', 'modified'))            
         }),
     )
 
-    readonly_fields = (('create', 'modified', 'user'))
+    readonly_fields = (('created', 'modified', 'user'))
 
 class ProfileInline(admin.StackedInline):
     """Profile In-line admin for users"""
