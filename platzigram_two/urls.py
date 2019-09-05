@@ -26,4 +26,5 @@ urlpatterns = [
     path('posts/', posts_views.list_posts, name = "feed"),
     path('account/login/', users_views.login_view, name = "login"),
     path('account/logout/', users_views.logout_view, name = "logout"),
+    path('account/signup/', users_views.signup, name = "signup"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
