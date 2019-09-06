@@ -27,7 +27,7 @@ class ProfileAdmin(admin.ModelAdmin):
 
     fieldsets = (
         ('Profile', {
-            'fields': (('user', 'picture'))            
+            'fields': (('user', 'picture'),)
         }),
         ('Extra information', {
             'fields': (
@@ -36,11 +36,11 @@ class ProfileAdmin(admin.ModelAdmin):
             )            
         }),
         ('Metadata', {
-            'fields': (('created', 'modified'))            
+            'fields': (('created', 'modified'),)
         }),
     )
 
-    readonly_fields = (('created', 'modified', 'user'))
+    readonly_fields = ('created', 'modified')
 
 class ProfileInline(admin.StackedInline):
     """Profile In-line admin for users"""
@@ -51,6 +51,15 @@ class ProfileInline(admin.StackedInline):
 class UserAdmin(BaseUserAdmin):
     """Add profile admin to base user admin"""
     inlines = (ProfileInline,)
+    list_display = (
+        'username',
+        'email',
+        'first_name',
+        'last_name',
+        'is_active',
+        'is_staff'
+    )
+
 
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
