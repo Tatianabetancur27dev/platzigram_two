@@ -6,7 +6,7 @@
 
 
 {% block container %}
-<form action="{% url 'login' %}" method="POST">
+<form action="{% url 'users:login' %}" method="POST">
     {% csrf_token %}
     {% if error %}
     <div class="alert alert-danger">{{ error }}</div>
@@ -16,6 +16,6 @@
     <input type="password" placeholder="Password" name="password" class="form-control input-sm">
     <br>
     <button type="submit" class="btn btn-primary">Sing in</button>
-     <p class="mt-4">Don't have an account yet? <a href="{% url 'signup' %}">Sign up here.</a></p>
+     <p class="mt-4">Don't have an account yet? <a href="{% url 'users:signup' %}">Sign up here.</a></p>
 </form>
 {% endblock%}
