@@ -1,2 +1,2 @@
-# platzigram_two
-Course-Django replic Instragram
+# platzigram
+Course-Django Instragram
