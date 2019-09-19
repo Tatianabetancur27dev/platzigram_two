@@ -1,8 +1,8 @@
 *.pyc
 __ pycache __
-/venv
+venv/
 db.sqlite3
-/static/
-/media/
-/.vscode/
+static/
+media/
+.vscode/
 .DS_Store
